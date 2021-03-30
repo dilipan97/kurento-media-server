@@ -454,7 +454,7 @@ kms_enc_tree_bin_configure (KmsEncTreeBin *self,
   mediator = kms_utils_create_mediator_element (caps);
   queue = kms_utils_element_factory_make ("queue", "enctreebin");
 
-  g_object_set (queue, "leaky", 2, "max-size-time", 1, NULL);
+  g_object_set (queue, "leaky", 2, "max-size-time", LEAKY_TIME, NULL);
 
   if (rate) {
     gst_bin_add (GST_BIN (self), rate);

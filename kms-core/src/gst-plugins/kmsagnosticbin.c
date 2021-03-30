@@ -421,7 +421,7 @@ kms_agnostic_bin2_link_to_tee (KmsAgnosticBin2 *self,
     GstElement *rate = kms_utils_create_rate_for_caps (caps);
     GstElement *mediator = kms_utils_create_mediator_element (caps);
 
-    g_object_set (queue, "leaky", 2, "max-size-time", 1, NULL);
+    g_object_set (queue, "leaky", 2, "max-size-time", LEAKY_TIME, NULL);
 
     remove_element_on_unlinked (convert, "src", "sink");
     if (rate) {
